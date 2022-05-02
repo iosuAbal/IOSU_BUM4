@@ -16,6 +16,8 @@
     <orderEntry type="library" name="Maven: org.openjfx:javafx-graphics:win:17.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:17.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.openjfx:javafx-base:win:17.0.1" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:19-ea+5" level="project" />
+    <orderEntry type="library" name="Maven: org.openjfx:javafx-swing:win:19-ea+5" level="project" />
     <orderEntry type="library" name="Maven: org.apache.xmlgraphics:batik-transcoder:1.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.xmlgraphics:batik-anim:1.13" level="project" />
     <orderEntry type="library" name="Maven: org.apache.xmlgraphics:batik-css:1.13" level="project" />

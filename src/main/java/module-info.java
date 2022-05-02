@@ -5,6 +5,8 @@ module com.example.bum_definitivo {
     requires org.kordamp.bootstrapfx.core;
     requires com.google.gson;
     requires okhttp3;
+    requires javafx.swing;
+    requires batik.transcoder;
 
     opens com.example.application to javafx.fxml;
     exports com.example.application;

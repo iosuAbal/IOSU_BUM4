@@ -3,17 +3,24 @@ package com.example.application;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
-
 import domain.Competition;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import org.apache.batik.transcoder.TranscoderException;
+import org.apache.batik.transcoder.TranscoderInput;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class UIController {
     @FXML
@@ -36,6 +43,9 @@ public class UIController {
 
     @FXML
     private Button nextBtn;
+
+    @FXML
+    private ImageView img;
 
     List<Competition> competitons;
 
@@ -92,6 +102,29 @@ public class UIController {
         areaField.setText(String.valueOf(competitons.get(i).getArea().getId()));
         areaNameField.setText(competitons.get(i).getArea().getName());
         codeField.setText(competitons.get(i).getArea().getCountryCode());
+        img.setImage(null);
+
+
+        BufferedImageTranscoder transcoder = new BufferedImageTranscoder();
+
+        if(competitons.get(i).getEmblemUrl()!=null){
+            try (InputStream file = new URL(competitons.get(i).getEmblemUrl()).openStream()) {
+                TranscoderInput transIn = new TranscoderInput(file);
+                try {
+                    transcoder.transcode(transIn, null);
+
+                    Image logo = SwingFXUtils.toFXImage(transcoder.getBufferedImage(), null);
+                    img.setImage(logo);
+                } catch (TranscoderException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            catch (IOException io) {
+                io.printStackTrace();
+            }
+        }
+
+
 
     }
 
