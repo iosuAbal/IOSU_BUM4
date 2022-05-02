@@ -54,6 +54,7 @@ public class UIController {
         jsonObject=gson.fromJson(body,JsonObject.class);
         Type competitionListType =new TypeToken<ArrayList<Competition>>(){}.getType();
         competitons=gson.fromJson((jsonObject.get("competitions")),competitionListType);
+        System.out.println(competitons);
         maximumMatches= competitons.size();
         currentIndex=0;
         writeValues(currentIndex);
@@ -90,8 +91,7 @@ public class UIController {
         compNameField.setText(competitons.get(i).getName());
         areaField.setText(String.valueOf(competitons.get(i).getArea().getId()));
         areaNameField.setText(competitons.get(i).getArea().getName());
-        if (competitons.get(i).getCode() == null) codeField.setText("");
-        else codeField.setText(String.valueOf(competitons.get(i).getCode()));
+        codeField.setText(competitons.get(i).getArea().getCountryCode());
 
     }
 

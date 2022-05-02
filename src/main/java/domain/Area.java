@@ -3,6 +3,8 @@ package domain;
 public class Area {
     public int id;
     public String name;
+    public String countryCode;
+
 
     public int getId() {
         return id;
@@ -18,6 +20,14 @@ public class Area {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
     }
 
     @Override

@@ -13,7 +13,7 @@
       <Label layoutX="113.0" layoutY="159.0" text="Competition name:" />
       <Label layoutX="113.0" layoutY="193.0" text="Area Id:" />
       <Label layoutX="113.0" layoutY="231.0" text="Area name:" />
-      <Label layoutX="113.0" layoutY="272.0" text="Country area Id:" />
+      <Label layoutX="113.0" layoutY="272.0" text="Area CountryCode:" />
       <Button fx:id="prevBtn" layoutX="173.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#getPrevious" text="Previous" />
       <Button fx:id="nextBtn" layoutX="334.0" layoutY="338.0" mnemonicParsing="false" onMouseClicked="#getNext" prefHeight="25.0" prefWidth="48.0" text="Next" />
       <TextField fx:id="compIdField" layoutX="226.0" layoutY="117.0" />
@@ -26,6 +26,6 @@
             <Font name="Ebrima" size="30.0" />
          </font>
       </Label>
-      <ImageView fitHeight="114.0" fitWidth="160.0" layoutX="401.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img" fitHeight="114.0" fitWidth="160.0" layoutX="401.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
