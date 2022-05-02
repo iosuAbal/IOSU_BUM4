@@ -11,7 +11,7 @@ import java.io.IOException;
 public class ClientApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ClientApplication.class.getResource("mainUI.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 570, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 700, 400);
         stage.setTitle("Football Matches");
         stage.setScene(scene);
         stage.show();

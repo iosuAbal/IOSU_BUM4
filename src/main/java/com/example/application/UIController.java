@@ -108,19 +108,24 @@ public class UIController {
         BufferedImageTranscoder transcoder = new BufferedImageTranscoder();
 
         if(competitons.get(i).getEmblemUrl()!=null){
-            try (InputStream file = new URL(competitons.get(i).getEmblemUrl()).openStream()) {
-                TranscoderInput transIn = new TranscoderInput(file);
-                try {
-                    transcoder.transcode(transIn, null);
+            if(competitons.get(i).getEmblemUrl().substring(competitons.get(i).getEmblemUrl().length() - 3).equals("png")){
+                Image logo= new Image(competitons.get(i).getEmblemUrl());
+                img.setImage(logo);
+            }else{
+                try (InputStream file = new URL(competitons.get(i).getEmblemUrl()).openStream()) {
+                    TranscoderInput transIn = new TranscoderInput(file);
+                    try {
+                        transcoder.transcode(transIn, null);
 
-                    Image logo = SwingFXUtils.toFXImage(transcoder.getBufferedImage(), null);
-                    img.setImage(logo);
-                } catch (TranscoderException ex) {
-                    ex.printStackTrace();
+                        Image logo = SwingFXUtils.toFXImage(transcoder.getBufferedImage(), null);
+                        img.setImage(logo);
+                    } catch (TranscoderException ex) {
+                        ex.printStackTrace();
+                    }
                 }
-            }
             catch (IOException io) {
-                io.printStackTrace();
+                    io.printStackTrace();
+                }
             }
         }
 
